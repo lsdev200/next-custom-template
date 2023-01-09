@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import withAuth from "../guard/withAuth";
 
 const RegistrationClient: React.FC = () => {
   const router = useRouter();
@@ -107,7 +106,4 @@ const RegistrationClient: React.FC = () => {
   );
 };
 
-export default withAuth({
-  WrappedComponent: RegistrationClient,
-  unprotected: true,
-});
+export default RegistrationClient;

@@ -1,13 +1,17 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useEffect } from "react";
-import withAuth from "./guard/withAuth";
-
-function Home() {
+import { options } from "./api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth/next";
+import withAuth from "./hooks/withAuth";
+async function Home() {
   return (
     <>
-      <div className="text-center">Hello Welcome !</div>
+      <h1 className="text-center">Welcome to Devonix! </h1>
     </>
   );
 }
-export default withAuth({ WrappedComponent: Home });
+// export default withAuth({
+//   WrappedComponent: Home,
+// });
+export default Home;

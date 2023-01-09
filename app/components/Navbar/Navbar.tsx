@@ -1,8 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BiBell, BiUserCircle, BiLogOut } from "react-icons/bi";
 import { FaUserTie } from "react-icons/fa";
+import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -30,11 +32,6 @@ const Navbar: React.FC = () => {
     };
   }, [activeModal]);
 
-  const logout = () => {
-    localStorage.clear();
-    router.push("/Login");
-  };
-
   return (
     <header className="bg-white border-b-2 border-[#d9d9d9] shadow-sm h-20 flex items-center">
       <div className="container mx-auto px-4 py-7 flex justify-end">
@@ -52,12 +49,15 @@ const Navbar: React.FC = () => {
       </div>
       {activeModal === "logout" && (
         <div className="absolute right-0 mt-24 w-40 bg-white border rounded shadow-md modal animate__animated animate__fadeIn">
-          <button
+          <Link
+            href="/api/auth/signout"
             className=" w-full py-2 text-left px-4 hover:bg-gray-100 flex items-center"
-            onClick={logout}
+            onClick={() => {
+              signOut();
+            }}
           >
             <BiLogOut className="mr-2" /> Logout
-          </button>
+          </Link>
         </div>
       )}
     </header>
