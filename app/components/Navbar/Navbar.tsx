@@ -58,6 +58,7 @@ const Navbar: React.FC = () => {
           >
             <BiLogOut className="mr-2" /> Logout
           </Link>
+          
         </div>
       )}
     </header>
