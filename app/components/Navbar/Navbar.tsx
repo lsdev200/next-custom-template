@@ -39,6 +39,7 @@ const Navbar: React.FC = () => {
           <button className="text-gray-600 hover:text-gray-800">
             <BiBell className="w-6 h-6 md:h-7 lg:h-8 xl:h-9" />
           </button>
+          
           <button
             className="text-gray-600 hover:text-gray-800"
             onClick={() => openModal("logout")}
