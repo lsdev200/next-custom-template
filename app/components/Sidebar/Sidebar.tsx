@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div
-      className={`bg-[#ffffff] text-white border-r-2 border-[#d9d9d9] ${
+      className={`bg-[#ffffff] text-white border-r-2 border-[#d9d9d9] z-40 ${
         isOpen ? "w-64" : "w-24"
       } transition-width ease-in-out duration-300`}
     >
@@ -50,7 +50,7 @@ const Sidebar: React.FC = () => {
         </div>
       </nav>
       <button
-        className="fixed bottom-4 left-4 bg-white p-2 rounded-full shadow-lg text-black"
+        className="fixed bottom-4 left-4 bg-white p-2  shadow-xl border-1 rounded-md text-black"
         onClick={toggleSidebar}
       >
         {isOpen ? (
