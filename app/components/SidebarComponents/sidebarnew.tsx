@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaHome, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa"; // You'll need to install react-icons
+import { ImCross } from "react-icons/im";
+import Image from "next/image";
 
 const SidebarMenu: React.FC = () => {
   const [isCollapsed, setCollapsed] = useState(false);
@@ -13,17 +15,33 @@ const SidebarMenu: React.FC = () => {
 
   return (
     <nav
-      className={` bg-gray-800 h-screen text-gray-200 ${
+      className={` bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black ${
         isCollapsed ? "w-16" : "w-64"
       }`}
     >
-      <div className="flex items-center justify-between p-4">
+      <div
+        className={`flex items-center ${
+          isCollapsed ? "justify-center" : "justify-between"
+        }
+p-4`}
+      >
+        {isCollapsed ? (
+          <></>
+        ) : (
+          <Image
+            src="/assets/img/devonix.png"
+            alt="Company Logo"
+            width={130}
+            height={120}
+            style={{ mixBlendMode: "multiply", marginLeft: "30px" }}
+          />
+        )}
         <button
           onClick={toggleSidebar}
-          className="text-white focus:outline-none focus:text-white"
+          className="text-black focus:outline-none focus:text-black"
         >
           {isCollapsed ? (
-            <FaHome size={24} />
+            <ImCross className="text-md" />
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,13 +59,12 @@ const SidebarMenu: React.FC = () => {
             </svg>
           )}
         </button>
-        {/* <span className="text-2xl font-semibold">Sidebar</span> */}
       </div>
       <ul className="p-2">
         <li className="mb-2">
           <Link href="/">
             <div
-              className={`flex items-center hover:bg-gray-700 p-2 rounded  ${
+              className={`flex items-center hover:bg-[#ebedef] p-2 rounded  ${
                 isCollapsed ? "flex items-center" : ""
               }`}
             >
@@ -59,7 +76,7 @@ const SidebarMenu: React.FC = () => {
             </div>
           </Link>
         </li>
-        <li className="mb-2">
+        {/* <li className="mb-2">
           <Link href="/profile">
             <div
               className={`flex items-center hover:bg-gray-700 p-2 rounded  ${
@@ -103,7 +120,7 @@ const SidebarMenu: React.FC = () => {
               {isCollapsed ? null : "Logout"}
             </div>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

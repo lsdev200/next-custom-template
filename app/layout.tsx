@@ -2,9 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AuthProvider from "./context/AuthProvider";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Navbar from "./components/Navbar/Navbar";
-import SidebarMenu from "./components/sidebar";
+import Navbar from "./components/navbarComponents/Navbar";
+import SidebarMenu from "./components/SidebarComponents/sidebarnew";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
             <SidebarMenu />
             <div className="flex-1 flex flex-col overflow-hidden">
               <Navbar />
-              <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#e9ebfa] ">
+              <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f6f8fa] ">
                 {children}
               </main>
             </div>

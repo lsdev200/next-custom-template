@@ -1,0 +1,62 @@
+    [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "role": "Admin",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Alice Smith",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Bob Johnson",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Ella Williams",
+            "role": "Moderator",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "David Lee",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Sarah Brown",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 7,
+            "name": "Michael Davis",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 8,
+            "name": "Olivia Wilson",
+            "role": "Admin",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 9,
+            "name": "William Clark",
+            "role": "User",
+            "avatar": "/assets/img/dummy.jpeg"
+        },
+        {
+            "id": 10,
+            "name": "Emily Harris",
+            "role": "Moderator",
+            "avatar": "/assets/img/dummy.jpeg"
+        }
+    ]
