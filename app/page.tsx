@@ -36,6 +36,7 @@ import SidebarMenu from "./components/SidebarComponents/sidebarnew";
 import UserList from "./components/userlist";
 import FileUpload from "./components/formComponents/fileupload";
 import DatePicker from "./components/formComponents/calendar";
+import Alert from "./components/Alerts/alerts";
 
 async function Home() {
   const dropdownoption = [
@@ -74,7 +75,7 @@ async function Home() {
   return (
     <>
       <div className="w-full h-full flex flex-wrap justify-center items-center ">
-        <div className="flex w-full gap-24 ml-24 ">
+        {/* <div className="flex w-full gap-24 ml-24 ">
           <DataVisualizationBar data={barchartdata.data} />
           <DataVisualizationPie data={piechartdata.data} />
           <DataVisualizationDoughnut data={doughnutchartdata.data} />
@@ -83,7 +84,7 @@ async function Home() {
           <DataVisualizationLine data={linechartdata.data} />
           <DataVisualizationPolarArea data={polarareachartdata.data} />
           <DataVisualizationRadar data={radarchartdata.data} />
-        </div>
+        </div> */}
 
         {/* <UserList users={userlist} /> */}
         {/* <FileUpload
@@ -93,6 +94,14 @@ async function Home() {
         /> */}
         {/* <DatePicker onDateChange={onDateChange} selectedDate={selecteddate} /> */}
         {/* <DropdownMenu /> */}
+        <div className="p-4">
+          <Alert type="success" message="Success alert message" />
+          <Alert type="error" message="Error alert message" />
+          <Alert type="info" message="Info alert message" />
+          <Alert type="warning" message="Warning alert message" />
+          <Alert type="primary" message="Primary alert message" />
+          <Alert type="secondary" message="Secondary alert message" />
+        </div>
       </div>
     </>
   );
