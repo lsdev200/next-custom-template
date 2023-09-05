@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 body {
   background-color: #ffffff;
 }
 
+/* remove arrows from nuber input  */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -17,6 +14,23 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* custom Animations  */
+@keyframes slideIn {
+  0% {
+    transform: translateX(
+      100%
+    ); /* Start position: completely off-screen to the left */
+  }
+  100% {
+    transform: translateX(0); /* End position: fully visible */
+  }
+}
+
+#custom-alerts {
+  animation: slideIn 0.5s forwards;
+  position: fixed;
 }

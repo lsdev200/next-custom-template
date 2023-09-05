@@ -1,4 +1,5 @@
 "use client";
+
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { options } from "./api/auth/[...nextauth]/options";
@@ -38,7 +39,7 @@ import FileUpload from "./components/formComponents/fileupload";
 import DatePicker from "./components/formComponents/calendar";
 import Alert from "./components/Alerts/alerts";
 
-async function Home() {
+function Home() {
   const dropdownoption = [
     "Television",
     "Chair",

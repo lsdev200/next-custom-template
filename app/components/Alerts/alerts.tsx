@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiSolidErrorCircle } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 import { BsInfoCircleFill } from "react-icons/bs";
@@ -12,7 +12,9 @@ interface AlertProps {
 }
 
 const Alert: React.FC<AlertProps> = ({ type, message }) => {
-  const alertClasses = `p-4 mb-4 rounded-md ${
+  const [hide, setHide] = useState(true);
+
+  const alertClasses = `p-4 mb-4 rounded-md fixed top-16 right-5 ${
     type === "success"
       ? "bg-green-100 border-green-500 text-green-700"
       : type === "error"
@@ -40,19 +42,35 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => {
       : "text-gray-500"
   }`;
 
+  useEffect(() => {
+    setHide(false);
+
+    const timeout = setTimeout(() => {
+      setHide(true);
+      clearTimeout(timeout);
+    }, 5000);
+  }, []);
+
   return (
-    <div className={alertClasses}>
-      <span className={iconClasses}>
-        {type === "success" && <FaCheckCircle />}
-        {type === "error" && <BiSolidErrorCircle />}
-        {type === "info" && <BsInfoCircleFill />}
-        {type === "warning" && <IoMdWarning />}
-        {type === "primary" && <FaCheckCircle />}
-        {type === "secondary" && <FaCheckCircle />}
-      </span>
-      <p>{message}</p>
-    </div>
+    <>
+      {!hide ? (
+        <div id="custom-alerts" className={alertClasses}>
+          <span className={iconClasses}>
+            {type === "success" && <FaCheckCircle />}
+            {type === "error" && <BiSolidErrorCircle />}
+            {type === "info" && <BsInfoCircleFill />}
+            {type === "warning" && <IoMdWarning />}
+            {type === "primary" && <FaCheckCircle />}
+            {type === "secondary" && <FaCheckCircle />}
+          </span>
+          <p>{message}</p>
+        </div>
+      ) : null}
+    </>
   );
 };
 
 export default Alert;
+
+// TODO:
+// show multiple alerts at a time, one below one.
