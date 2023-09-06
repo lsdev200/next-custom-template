@@ -1,29 +1,40 @@
 "use client";
-
 import React, { useState } from "react";
 import Link from "next/link";
-import { FaHome, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa"; // You'll need to install react-icons
 import { ImCross } from "react-icons/im";
 import Image from "next/image";
+import Navigation from "../navigation/navigation"; // Adjust the import path as needed.
 
+// Define the NavigationItem interface as mentioned above.
+interface NavigationItem {
+  sectionTitle?: string;
+  title?: string;
+  path?: string;
+  icon?: string | JSX.Element;
+  children?: NavigationItem[];
+}
 const SidebarMenu: React.FC = () => {
   const [isCollapsed, setCollapsed] = useState(false);
+  const [isProfileOpen, setProfileOpen] = useState(false);
 
   const toggleSidebar = () => {
     setCollapsed(!isCollapsed);
   };
 
+  const toggleProfile = () => {
+    setProfileOpen(!isProfileOpen);
+  };
+
   return (
     <nav
-      className={` bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black ${
+      className={`bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black ${
         isCollapsed ? "w-16" : "w-64"
       }`}
     >
       <div
         className={`flex items-center ${
           isCollapsed ? "justify-center" : "justify-between"
-        }
-p-4`}
+        } p-4`}
       >
         {isCollapsed ? (
           <></>
@@ -60,67 +71,48 @@ p-4`}
           )}
         </button>
       </div>
-      <ul className="p-2">
-        <li className="mb-2">
-          <Link href="/">
-            <div
-              className={`flex items-center hover:bg-[#ebedef] p-2 rounded  ${
-                isCollapsed ? "flex items-center" : ""
-              }`}
-            >
-              <FaHome
-                size={20}
-                className={`${isCollapsed ? "m-auto" : "mr-2"}`}
-              />
-              {isCollapsed ? null : "Home"}
-            </div>
-          </Link>
-        </li>
-        {/* <li className="mb-2">
-          <Link href="/profile">
-            <div
-              className={`flex items-center hover:bg-gray-700 p-2 rounded  ${
-                isCollapsed ? "flex items-center" : ""
-              }`}
-            >
-              <FaUser
-                size={20}
-                className={`${isCollapsed ? "m-auto" : "mr-2"}`}
-              />
-              {isCollapsed ? null : "Profile"}
-            </div>
-          </Link>
-        </li>
-        <li className="mb-2">
-          <Link href="/settings">
-            <div
-              className={`flex items-center hover:bg-gray-700 p-2 rounded  ${
-                isCollapsed ? "flex items-center" : ""
-              }`}
-            >
-              <FaCog
-                size={20}
-                className={`${isCollapsed ? "m-auto" : "mr-2"}`}
-              />
-              {isCollapsed ? null : "Settings"}
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="/logout">
-            <div
-              className={`flex items-center hover:bg-gray-700 p-2 rounded  ${
-                isCollapsed ? "flex items-center" : ""
-              }`}
-            >
-              <FaSignOutAlt
-                size={20}
-                className={`${isCollapsed ? "m-auto" : "mr-2"}`}
-              />
-              {isCollapsed ? null : "Logout"}
-            </div>
-          </Link>
-        </li> */}
+
+      {/* Sidebar navigation links */}
+      <ul className="p-4">
+        {Navigation().map((item: NavigationItem, index: number) => (
+          <React.Fragment key={index}>
+            {item.sectionTitle && (
+              <li className="text-gray-500 text-sm mt-2 mb-1">
+                {item.sectionTitle}
+              </li>
+            )}
+            {item.path && (
+              <li>
+                <Link
+                  href={item.path}
+                  className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md"
+                >
+                  {item.icon}
+                  <span className="ml-3">{item.title}</span>
+                </Link>
+              </li>
+            )}
+            {item.children && (
+              <ul>
+                {item.children.map(
+                  (child: NavigationItem, childIndex: number) => (
+                    <li key={childIndex}>
+                      <Link
+                        href={child.path || ""}
+                        className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md ml-4"
+                      >
+                        {child.icon && (
+                          <i className={`iconify mr-2 text-lg ${child.icon}`} />
+                        )}
+                        <span>{child.title}</span>
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            )}
+          </React.Fragment>
+        ))}
       </ul>
     </nav>
   );

@@ -220,7 +220,7 @@ function Home() {
         <ImageCarousel images={images} captions={captions} autoPlay={true} />
       </div> */}
       <div className="w-full h-full flex flex-wrap justify-center items-center ">
-        {/* <div className="flex w-full gap-24 ml-24 ">
+        <div className="flex w-full gap-24 ml-24 ">
           <DataVisualizationBar data={barchartdata.data} />
           <DataVisualizationPie data={piechartdata.data} />
           <DataVisualizationDoughnut data={doughnutchartdata.data} />
@@ -229,7 +229,7 @@ function Home() {
           <DataVisualizationLine data={linechartdata.data} />
           <DataVisualizationPolarArea data={polarareachartdata.data} />
           <DataVisualizationRadar data={radarchartdata.data} />
-        </div> */}
+        </div>
 
         {/* <UserList users={userlist} /> */}
         {/* <FileUpload
