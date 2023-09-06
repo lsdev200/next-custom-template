@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ImCross } from "react-icons/im";
 import Image from "next/image";
 import Navigation from "../navigation/navigation"; // Adjust the import path as needed.
+import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 
 // Define the NavigationItem interface as mentioned above.
 interface NavigationItem {
@@ -15,14 +16,14 @@ interface NavigationItem {
 }
 const SidebarMenu: React.FC = () => {
   const [isCollapsed, setCollapsed] = useState(false);
-  const [isProfileOpen, setProfileOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const toggleSidebar = () => {
     setCollapsed(!isCollapsed);
   };
 
   const toggleProfile = () => {
-    setProfileOpen(!isProfileOpen);
+    setOpen(!isOpen);
   };
 
   return (
@@ -94,21 +95,36 @@ const SidebarMenu: React.FC = () => {
             )}
             {item.children && (
               <ul>
-                {item.children.map(
-                  (child: NavigationItem, childIndex: number) => (
-                    <li key={childIndex}>
-                      <Link
-                        href={child.path || ""}
-                        className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md ml-4"
-                      >
-                        {child.icon && (
-                          <i className={`iconify mr-2 text-lg ${child.icon}`} />
-                        )}
-                        <span>{child.title}</span>
-                      </Link>
-                    </li>
-                  )
-                )}
+                <li>
+                  <div
+                    onClick={toggleProfile}
+                    className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md"
+                  >
+                    {item.icon}
+                    <span className="ml-3">{item.title}</span>
+                    <BsChevronRight
+                      size={20}
+                      className={`ml-28 transition-transform transform  opacity-50 ${
+                        isOpen ? "rotate-90" : ""
+                      }`}
+                    />
+                  </div>
+                </li>
+
+                {isOpen &&
+                  item.children.map(
+                    (child: NavigationItem, childIndex: number) => (
+                      <li key={childIndex}>
+                        <Link
+                          href={child.path || ""}
+                          className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md ml-4 transition duration-1000"
+                        >
+                          {child.icon}
+                          <span className="ml-3">{child.title}</span>
+                        </Link>
+                      </li>
+                    )
+                  )}
               </ul>
             )}
           </React.Fragment>

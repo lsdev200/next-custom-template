@@ -1,4 +1,7 @@
 import { FaHome } from "react-icons/fa";
+import { LiaCaretRightSolid } from "react-icons/lia";
+import { PiCaretDoubleRightDuotone } from "react-icons/pi";
+import { AiOutlineForm } from "react-icons/ai";
 
 const Navigation = () => {
   return [
@@ -14,41 +17,41 @@ const Navigation = () => {
       sectionTitle: "Form Components",
     },
     {
-      icon: "tabler:database-plus",
-      title: "Form Components",
+      icon: <AiOutlineForm />,
+      title: "Form ",
       children: [
         {
           title: "Input",
 
           path: "/formcomponents/input",
-          // icon: 'tabler:'
+          icon: <PiCaretDoubleRightDuotone />,
         },
         {
           title: "Dropdown",
 
           path: "/formcomponents/dropdown",
-          // icon: 'tabler:'
+          icon: <PiCaretDoubleRightDuotone />,
         },
         {
           title: "Dropdown Select",
 
           path: "/formcomponents/dropdownselect",
 
-          // icon: 'tabler:'
+          icon: <PiCaretDoubleRightDuotone />,
         },
         {
           title: "File Upload",
 
           path: "/formcomponents/fileupload",
 
-          // icon: 'tabler:'
+          icon: <PiCaretDoubleRightDuotone />,
         },
         {
           title: "Calendar",
 
           path: "/formcomponents/calendar",
 
-          // icon: 'tabler:'
+          icon: <PiCaretDoubleRightDuotone />,
         },
       ],
     },

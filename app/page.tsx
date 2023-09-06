@@ -51,36 +51,14 @@ import Map from "./components/googleMap/googlemap";
 import CountdownTimer from "./components/countdown";
 
 function Home() {
-  const dropdownoption = [
-    "Television",
-    "Chair",
-    "Smartphone",
-    "Laptop",
-    "Desk",
-    "Sofa",
-    "Table",
-    "Headphones",
-    "Refrigerator",
-    "Microwave",
-    "Washing Machine",
-    "Toaster",
-    "Blender",
-    "Coffee Maker",
-    "Vacuum Cleaner",
-    "Dining Table",
-  ];
-  const [selectedValue, setSelectedValue] = useState<string>("");
-
-  const handleDropdownChange = (selectedValue: string) => {
-    setSelectedValue(selectedValue);
-  };
+ 
+ 
   // console.log(orderdetaildata);
   // console.log(piechartdata);
 
   const onFilterChange = () => {};
-  const onUpload = () => {};
-  const onDateChange = () => {};
-  const selecteddate = new Date();
+
+
 
   const filetypes = ["image/png", "image/jpeg"];
   const filsize = 100000;
@@ -232,11 +210,7 @@ function Home() {
         </div>
 
         {/* <UserList users={userlist} /> */}
-        {/* <FileUpload
-          allowedFileTypes={filetypes}
-          onUpload={onUpload}
-          maxFileSize={filsize}
-        /> */}
+        {/* */}
         {/* <DatePicker onDateChange={onDateChange} selectedDate={selecteddate} /> */}
         {/* <DropdownMenu /> */}
         {/* <div className="p-4">
