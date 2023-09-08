@@ -74,7 +74,7 @@ const SidebarMenu: React.FC = () => {
       </div>
 
       {/* Sidebar navigation links */}
-      <ul className="p-4">
+      <ul className="p-4 ">
         {Navigation().map((item: NavigationItem, index: number) => (
           <React.Fragment key={index}>
             {item.sectionTitle && (
@@ -86,10 +86,11 @@ const SidebarMenu: React.FC = () => {
               <li>
                 <Link
                   href={item.path}
-                  className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md"
+                  className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md "
                 >
                   {item.icon}
-                  <span className="ml-3">{item.title}</span>
+
+                  <span className="ml-3 ">{item.title}</span>
                 </Link>
               </li>
             )}
@@ -98,13 +99,15 @@ const SidebarMenu: React.FC = () => {
                 <li>
                   <div
                     onClick={toggleProfile}
-                    className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md"
+                    className="flex items-center justify-between text-black hover:bg-gray-200 p-2 rounded-md"
                   >
-                    {item.icon}
-                    <span className="ml-3">{item.title}</span>
+                    <div className="flex items-center">
+                      {item.icon}
+                      <span className="ml-3">{item.title}</span>
+                    </div>
                     <BsChevronRight
                       size={20}
-                      className={`ml-28 transition-transform transform  opacity-50 ${
+                      className={`transition-transform transform opacity-50 ${
                         isOpen ? "rotate-90" : ""
                       }`}
                     />

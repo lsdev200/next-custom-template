@@ -14,7 +14,7 @@ interface AlertProps {
 const Alert: React.FC<AlertProps> = ({ type, message }) => {
   const [hide, setHide] = useState(true);
 
-  const alertClasses = `p-4 mb-4 rounded-md fixed top-16 right-5 ${
+  const alertClasses = `p-4 mb-4 rounded-md  ${
     type === "success"
       ? "bg-green-100 border-green-500 text-green-700"
       : type === "error"
@@ -51,17 +51,19 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => {
     }, 5000);
   }, []);
 
+
+  
   return (
     <>
       {!hide ? (
         <div id="custom-alerts" className={alertClasses}>
           <span className={iconClasses}>
-            {type === "success" && <FaCheckCircle />}
             {type === "error" && <BiSolidErrorCircle />}
             {type === "info" && <BsInfoCircleFill />}
             {type === "warning" && <IoMdWarning />}
             {type === "primary" && <FaCheckCircle />}
             {type === "secondary" && <FaCheckCircle />}
+            {type === "success" && <FaCheckCircle />}
           </span>
           <p>{message}</p>
         </div>

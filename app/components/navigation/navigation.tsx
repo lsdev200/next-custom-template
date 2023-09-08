@@ -2,6 +2,7 @@ import { FaHome } from "react-icons/fa";
 import { LiaCaretRightSolid } from "react-icons/lia";
 import { PiCaretDoubleRightDuotone } from "react-icons/pi";
 import { AiOutlineForm } from "react-icons/ai";
+import { HiMiniBellAlert } from "react-icons/hi2";
 
 const Navigation = () => {
   return [
@@ -51,6 +52,21 @@ const Navigation = () => {
 
           path: "/formcomponents/calendar",
 
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+      ],
+    },
+    {
+      sectionTitle: "Pop-Up",
+    },
+    {
+      icon: <HiMiniBellAlert />,
+      title: "PopUp",
+      children: [
+        {
+          title: "Alerts",
+
+          path: "/alerts",
           icon: <PiCaretDoubleRightDuotone />,
         },
       ],
