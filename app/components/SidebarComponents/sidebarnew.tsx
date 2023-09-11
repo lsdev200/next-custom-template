@@ -31,12 +31,12 @@ const SidebarMenu: React.FC = () => {
 
   return (
     <nav
-      className={`bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black ${
+      className={`bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black   ${
         isCollapsed ? "w-16" : "w-64"
       }`}
     >
       <div
-        className={`flex items-center ${
+        className={`flex items-center cursor-pointer ${
           isCollapsed ? "justify-center" : "justify-between"
         } p-4`}
       >
@@ -53,7 +53,7 @@ const SidebarMenu: React.FC = () => {
         )}
         <button
           onClick={toggleSidebar}
-          className="text-black focus:outline-none focus:text-black"
+          className="text-black focus:outline-none focus:text-black cursor-pointer"
         >
           {isCollapsed ? (
             <ImCross className="text-md" />
@@ -76,7 +76,7 @@ const SidebarMenu: React.FC = () => {
         </button>
       </div>
 
-      <ul className="p-4">
+      <ul className="p-4 cursor-pointer">
         {navigation.map((item: NavigationItem, index: number) => (
           <React.Fragment key={index}>
             {item.sectionTitle && (
