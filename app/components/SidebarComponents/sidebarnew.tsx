@@ -3,27 +3,30 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ImCross } from "react-icons/im";
 import Image from "next/image";
-import Navigation from "../navigation/navigation"; // Adjust the import path as needed.
+import Navigation from "../navigation/navigation";
 import { BsChevronDown, BsChevronRight } from "react-icons/bs";
 
-// Define the NavigationItem interface as mentioned above.
 interface NavigationItem {
   sectionTitle?: string;
   title?: string;
   path?: string;
   icon?: string | JSX.Element;
   children?: NavigationItem[];
+  isOpen?: boolean;
 }
+
 const SidebarMenu: React.FC = () => {
   const [isCollapsed, setCollapsed] = useState(false);
-  const [isOpen, setOpen] = useState(false);
+  const [navigation, setNavigation] = useState<NavigationItem[]>(Navigation());
 
   const toggleSidebar = () => {
     setCollapsed(!isCollapsed);
   };
 
-  const toggleProfile = () => {
-    setOpen(!isOpen);
+  const toggleProfile = (index: number) => {
+    const updatedNavigation = [...navigation];
+    updatedNavigation[index].isOpen = !updatedNavigation[index].isOpen;
+    setNavigation(updatedNavigation);
   };
 
   return (
@@ -73,12 +76,15 @@ const SidebarMenu: React.FC = () => {
         </button>
       </div>
 
-      {/* Sidebar navigation links */}
-      <ul className="p-4 ">
-        {Navigation().map((item: NavigationItem, index: number) => (
+      <ul className="p-4">
+        {navigation.map((item: NavigationItem, index: number) => (
           <React.Fragment key={index}>
             {item.sectionTitle && (
-              <li className="text-gray-500 text-sm mt-2 mb-1">
+              <li
+                className={`text-gray-500 text-sm mt-2 mb-1 ${
+                  isCollapsed ? "hidden" : ""
+                }`}
+              >
                 {item.sectionTitle}
               </li>
             )}
@@ -86,11 +92,12 @@ const SidebarMenu: React.FC = () => {
               <li>
                 <Link
                   href={item.path}
-                  className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md "
+                  className="flex items-center text-black hover:bg-gray-200 p-2 rounded-md"
                 >
                   {item.icon}
-
-                  <span className="ml-3 ">{item.title}</span>
+                  <span className={`ml-3 ${isCollapsed ? "hidden" : ""}`}>
+                    {item.title}
+                  </span>
                 </Link>
               </li>
             )}
@@ -98,23 +105,25 @@ const SidebarMenu: React.FC = () => {
               <ul>
                 <li>
                   <div
-                    onClick={toggleProfile}
+                    onClick={() => toggleProfile(index)}
                     className="flex items-center justify-between text-black hover:bg-gray-200 p-2 rounded-md"
                   >
                     <div className="flex items-center">
                       {item.icon}
-                      <span className="ml-3">{item.title}</span>
+                      <span className={`ml-3 ${isCollapsed ? "hidden" : ""}`}>
+                        {item.title}
+                      </span>
                     </div>
                     <BsChevronRight
                       size={20}
                       className={`transition-transform transform opacity-50 ${
-                        isOpen ? "rotate-90" : ""
+                        item.isOpen ? "rotate-90" : ""
                       }`}
                     />
                   </div>
                 </li>
 
-                {isOpen &&
+                {item.isOpen &&
                   item.children.map(
                     (child: NavigationItem, childIndex: number) => (
                       <li key={childIndex}>

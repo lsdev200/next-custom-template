@@ -32,7 +32,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
 
   return (
     <div className="relative">
-      <video ref={videoRef} src={videoUrl} controls className="w-full" />
+      <video ref={videoRef} src={videoUrl} controls className="w-96" />
 
       <div className="absolute top-0 right-0 p-2">
         <button

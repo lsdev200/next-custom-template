@@ -3,6 +3,8 @@ import { LiaCaretRightSolid } from "react-icons/lia";
 import { PiCaretDoubleRightDuotone } from "react-icons/pi";
 import { AiOutlineForm } from "react-icons/ai";
 import { HiMiniBellAlert } from "react-icons/hi2";
+import { BsMusicPlayerFill } from "react-icons/bs";
+import { BiCarousel } from "react-icons/bi";
 
 const Navigation = () => {
   return [
@@ -66,7 +68,34 @@ const Navigation = () => {
         {
           title: "Alerts",
 
-          path: "/alerts",
+          path: "/popup/alert",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Modal",
+
+          path: "/popup/modal",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+      ],
+    },
+    {
+      sectionTitle: "Player",
+    },
+    {
+      icon: <BsMusicPlayerFill />,
+      title: "Player",
+      children: [
+        {
+          title: "Carousel",
+
+          path: "/player/carousel",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Video",
+
+          path: "/player/video",
           icon: <PiCaretDoubleRightDuotone />,
         },
       ],

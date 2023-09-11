@@ -1,5 +1,5 @@
+import Alert from "@/app/components/Alerts/alerts";
 import React from "react";
-import Alert from "../components/Alerts/alerts";
 
 const page = () => {
   return (
