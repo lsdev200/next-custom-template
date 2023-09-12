@@ -15,6 +15,7 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => {
   const [hide, setHide] = useState(true);
 
   const alertClasses = `p-4 mb-4 rounded-md  ${
+    
     type === "success"
       ? "bg-green-100 border-green-500 text-green-700"
       : type === "error"
