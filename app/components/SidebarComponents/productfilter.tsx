@@ -58,7 +58,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
+    <div className="bg-white rounded-lg shadow-md p-4 w-96">
       <h3 className="text-lg font-semibold mb-2">Filters</h3>
       <div className="mb-4">
         <label className="block font-semibold">Sort By</label>

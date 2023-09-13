@@ -10,21 +10,21 @@ const products = [
     name: "Product 1",
     price: "$19.99",
     rating: 4.5,
-    image: "/product1.jpg",
+    image: "/assets/img/event.jpg",
   },
   {
     id: 2,
     name: "Product 2",
     price: "$29.99",
     rating: 4.2,
-    image: "/product2.jpg",
+    image: "/assets/img/EventManagement.jpg",
   },
   {
     id: 3,
     name: "Product 3",
     price: "$24.99",
     rating: 4.7,
-    image: "/product3.jpg",
+    image: "/assets/img/event-star-760-570.jpg",
   },
   // Add more product entries as needed
 ];
@@ -47,7 +47,7 @@ const ProductList: React.FC = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between  mb-4">
         <h2 className="text-xl font-semibold">Product List</h2>
         <div className="flex items-center">
           <label className="mr-2">Sort by:</label>

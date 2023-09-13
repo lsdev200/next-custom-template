@@ -5,6 +5,7 @@ import { AiOutlineForm } from "react-icons/ai";
 import { HiMiniBellAlert } from "react-icons/hi2";
 import { BsMusicPlayerFill } from "react-icons/bs";
 import { BiCarousel } from "react-icons/bi";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 const Navigation = () => {
   return [
@@ -96,6 +97,49 @@ const Navigation = () => {
           title: "Video",
 
           path: "/player/video",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+      ],
+    },
+
+    {
+      sectionTitle: "E-commerce",
+    },
+    {
+      icon: <MdOutlineProductionQuantityLimits />,
+      title: "E-commerce",
+      children: [
+        {
+          title: "Order Detail",
+
+          path: "/e-commerce/orderdetail",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Order History",
+
+          path: "/e-commerce/orderhistory",
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Product",
+
+          path: "/e-commerce/product",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Product Filter",
+
+          path: "/e-commerce/productfilter",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Product List",
+
+          path: "/e-commerce/productlist",
+
           icon: <PiCaretDoubleRightDuotone />,
         },
       ],

@@ -18,7 +18,7 @@ const Alert: React.FC<AlertProps> = ({ type, message }) => {
 
     type === "success"
       ? "bg-green-100 border-green-500 text-green-700"
-      
+        
       : type === "error"
       ? "bg-red-100 border-red-500 text-red-700"
       : type === "info"
