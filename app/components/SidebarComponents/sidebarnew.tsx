@@ -31,7 +31,7 @@ const SidebarMenu: React.FC = () => {
 
   return (
     <nav
-      className={`bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black overflow-auto scroll scroll-1  ${
+      className={`bg-[#ffffff] border-r-2 border-[#d9d9d9] shadow-lg h-screen text-black overflow-auto scroll scroll-1   ${
         isCollapsed ? "w-16" : "w-64"
       }`}
     >
