@@ -51,18 +51,13 @@ import Map from "./components/googleMap/googlemap";
 import CountdownTimer from "./components/countdown";
 
 function Home() {
- 
- 
-  // console.log(orderdetaildata);
-  // console.log(piechartdata);
 
-  const onFilterChange = () => {};
+
 
 
 
   const filetypes = ["image/png", "image/jpeg"];
   const filsize = 100000;
-
   // ** pagination
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 10; // Replace with your total number of pages
