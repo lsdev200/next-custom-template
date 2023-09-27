@@ -37,7 +37,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
       return;
     }
     validateAndUpload(file);
-    console.log(file);
+    console.log(file, "hiiiiiiiiiiiiii");
   };
 
   const validateAndUpload = (file: File) => {
@@ -75,6 +75,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
           accept={allowedFileTypes.join(",")}
           onChange={handleFileChange}
           className="hidden"
+          multiple
         />
         <p>Drag and drop your file here or click to browse.</p>
         {fileError && <p className="text-red-500">{fileError}</p>}

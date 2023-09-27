@@ -3,7 +3,7 @@
     "orderNumber": "12345",
     "date": "2023-09-02",
     "status": "Processing",
-    "totalPrice": 100.50,
+    "totalPrice": 50.50,
     "items": [
       {
         "id": 1,
@@ -17,7 +17,7 @@
     "orderNumber": "54321",
     "date": "2023-09-01",
     "status": "Shipped",
-    "totalPrice": 75.00,
+    "totalPrice": 45.00,
     "items": [
       {
         "id": 1,

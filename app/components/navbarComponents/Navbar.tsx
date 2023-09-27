@@ -5,6 +5,8 @@ import { BiBell, BiUserCircle, BiLogOut } from "react-icons/bi";
 import { FaUserTie } from "react-icons/fa";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import SearchBar from "./searchbar";
+import NotificationsPanel from "./notification";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -34,12 +36,15 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="bg-white border-b-2 border-[#d9d9d9] shadow-sm h-20 flex items-center">
+      <div className="ml-5">
+        <SearchBar />
+      </div>
+
       <div className="container mx-auto px-4 py-7 flex justify-end">
         <div className="flex items-center space-x-4">
           <button className="text-gray-600 hover:text-gray-800">
             <BiBell className="w-6 h-6 md:h-7 lg:h-8 xl:h-9" />
           </button>
-
           <button
             className="text-gray-600 hover:text-gray-800"
             onClick={() => openModal("logout")}

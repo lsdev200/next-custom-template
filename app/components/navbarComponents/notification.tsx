@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { BiBell } from "react-icons/bi";
 
 const NotificationsPanel: React.FC = () => {
   const [notifications, setNotifications] = useState([
@@ -41,22 +42,22 @@ const NotificationsPanel: React.FC = () => {
 
   return (
     <div className="relative">
-      <button
-        className="text-gray-600 hover:text-gray-800 focus:outline-none"
-        onClick={() => setIsPanelOpen(!isPanelOpen)}
-      >
-        Notifications
+      <button className="text-gray-600 hover:text-gray-800 focus:outline-none">
         {notifications.some((notification) => !notification.isRead) && (
-          <span className="bg-red-500 text-white px-2 py-1 ml-2 rounded-full">
+          <span className="bg-red-500 text-white px-2 py-1 ml-2 rounded-full text-xs">
             {
               notifications.filter((notification) => !notification.isRead)
                 .length
             }
           </span>
         )}
+        <BiBell
+          className="w-6 h-6 md:h-7 lg:h-8 xl:h-9 "
+          onClick={() => setIsPanelOpen(!isPanelOpen)}
+        />
       </button>
       {isPanelOpen && notifications.length > 0 && (
-        <div className="absolute w-[500px] mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <div className="absolute w-[500px] mt-2 bg-white border border-gray-300 rounded-lg shadow-lg right-0">
           {notifications.map((notification) => (
             <div
               key={notification.id}

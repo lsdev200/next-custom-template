@@ -15,19 +15,7 @@ const SearchBar: React.FC = () => {
 
     // Simulate fetching search results (replace with actual API call)
     // For this example, we'll just generate some dummy results
-    const dummyResults = [
-      "Desk",
-      "Sofa",
-      "Table",
-      "Headphones",
-      "Refrigerator",
-      "Microwave",
-      "Washing Machine",
-      "Toaster",
-      "Blender",
-      "Coffee Maker",
-      "Vacuum Cleaner",
-    ];
+    const dummyResults = [""];
 
     setResults(
       dummyResults.filter((result) =>
@@ -41,7 +29,7 @@ const SearchBar: React.FC = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="w-64 py-2 pl-8 pr-4 border rounded-full focus:outline-none focus:border-blue-500 ml-1"
+        className="w-64 py-2 pl-8 pr-4 border rounded-full focus:outline-none focus:border-[#000000] ml-1"
         value={query}
         onChange={handleInputChange}
       />
