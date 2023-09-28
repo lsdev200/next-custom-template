@@ -10,6 +10,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
+ 
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   const toggleFullScreen = () => {
     if (videoRef.current) {
       if (videoRef.current.requestFullscreen) {
@@ -22,14 +31,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
     }
     setIsFullScreen(!isFullScreen);
   };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
     <div className="relative">
       <video ref={videoRef} src={videoUrl} controls className="w-96" />
