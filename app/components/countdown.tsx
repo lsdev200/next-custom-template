@@ -10,6 +10,8 @@ interface TimeLeft {
 }
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const calculateTimeLeft = (): TimeLeft => {
     const currentTime = new Date();
     const difference = targetDate.getTime() - currentTime.getTime();
@@ -32,7 +34,7 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [calculateTimeLeft]);
 
   const addLeadingZero = (value: number): string => {
     return value < 10 ? `0${value}` : value.toString();
