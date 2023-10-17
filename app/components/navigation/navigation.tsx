@@ -1,10 +1,8 @@
 import { FaHome } from "react-icons/fa";
-import { LiaCaretRightSolid } from "react-icons/lia";
 import { PiCaretDoubleRightDuotone } from "react-icons/pi";
 import { AiOutlineForm } from "react-icons/ai";
 import { HiMiniBellAlert } from "react-icons/hi2";
 import { BsMusicPlayerFill } from "react-icons/bs";
-import { BiCarousel } from "react-icons/bi";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 
 const Navigation = () => {
@@ -139,6 +137,34 @@ const Navigation = () => {
           title: "Product List",
 
           path: "/e-commerce/productlist",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Countdown Timer",
+
+          path: "/e-commerce/countdowntimer",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Review",
+
+          path: "/e-commerce/review",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "Widget",
+
+          path: "/e-commerce/widget",
+
+          icon: <PiCaretDoubleRightDuotone />,
+        },
+        {
+          title: "FAQ",
+
+          path: "/e-commerce/faq",
 
           icon: <PiCaretDoubleRightDuotone />,
         },

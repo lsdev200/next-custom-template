@@ -29,6 +29,11 @@ export default function RootLayout({
               <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f6f8fa] ">
                 {children}
               </main>
+              <div className="flex justify-center items-center mb-5 bg-[#f6f8fa]">
+                <div className="font-bold ">
+                  Copyright © Designed & Developed by Devonix 2023
+                </div>
+              </div>
             </div>
           </div>
         </AuthProvider>

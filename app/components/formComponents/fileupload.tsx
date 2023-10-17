@@ -24,6 +24,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
     const file = e.dataTransfer.files[0];
     validateAndUpload(file);
     console.log(file);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +38,6 @@ const FileUpload: React.FC<FileUploadProps> = ({
       return;
     }
     validateAndUpload(file);
-    console.log(file, "hiiiiiiiiiiiiii");
   };
 
   const validateAndUpload = (file: File) => {

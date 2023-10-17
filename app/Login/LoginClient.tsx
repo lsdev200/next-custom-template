@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import withAuth from "../hooks/withAuth";
 
 const LoginClient: React.FC = () => {
   const router = useRouter();
@@ -84,4 +85,4 @@ const LoginClient: React.FC = () => {
   );
 };
 
-export default LoginClient;
+export default withAuth({ WrappedComponent: LoginClient, unprotected: true });
