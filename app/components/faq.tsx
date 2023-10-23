@@ -42,6 +42,8 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ categories }) => {
             }`}
           >
             {category.name}
+
+            
           </button>
           {activeCategory === category.id && (
             <div className="mt-2 space-y-2">
