@@ -79,8 +79,6 @@ function Home() {
   // ** video url
   const videoUrl = "assets/video/black_hole_-_15297 (540p).mp4";
 
-
-
   // ** notificatio
   const notifications = [
     { id: 1, message: "New message received", isNew: true },
@@ -150,7 +148,6 @@ function Home() {
         /> */}
 
         {/* <div className="container mx-auto p-4">*/}
-    
 
         {/* <div className="container mx-auto p-4">
           <h1 className="text-2xl font-semibold mb-4">Chat Box</h1>

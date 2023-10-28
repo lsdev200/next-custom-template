@@ -5,8 +5,10 @@ import AuthProvider from "./context/AuthProvider";
 import Navbar from "./components/navbarComponents/Navbar";
 import SidebarMenu from "./components/SidebarComponents/sidebarnew";
 import Loading from "./loading";
-
+import moment from "moment";
 const inter = Inter({ subsets: ["latin"] });
+
+const currentYear = moment().year();
 
 export const metadata: Metadata = {
   title: "Devonix",
@@ -31,7 +33,7 @@ export default function RootLayout({
               </main>
               <div className="flex justify-center items-center mb-5 bg-[#f6f8fa]">
                 <div className="font-bold ">
-                  Copyright © Designed & Developed by Devonix 2023
+                  Copyright © Designed & Developed by Devonix {currentYear}
                 </div>
               </div>
             </div>
