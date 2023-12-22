@@ -7,9 +7,13 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import withAuth from "../hooks/withAuth";
 import { ToastContainer, toast } from 'react-toastify';
-
+import { useState } from "react";
+import { BsFillEyeSlashFill } from "react-icons/bs";
+import { BsFillEyeFill } from "react-icons/bs";
 
 const LoginClient: React.FC = () => {
+
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   const { register, handleSubmit } = useForm<FieldValues>({
@@ -26,6 +30,11 @@ const LoginClient: React.FC = () => {
     router.push("/");
     window.location.reload();
     
+  };
+
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
   return (
     <>
@@ -55,17 +64,26 @@ const LoginClient: React.FC = () => {
                 label="Email"
                 register={register}
               />
+          
             </div>
 
-            <div>
+            <div className="">
               <Input
                 id="password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 required
-                placeholder="  Enter your name"
-                label="Name"
+                placeholder="  Enter your password"
+                label="Password"
                 register={register}
+                
               />
+          {/* <span
+           className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+          onClick={togglePasswordVisibility}
+          >
+          {showPassword ? <BsFillEyeFill/> : <BsFillEyeSlashFill/>} 
+        </span>
+         */}
             </div>
 
             <div>
