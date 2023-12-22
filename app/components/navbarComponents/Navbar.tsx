@@ -7,6 +7,7 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import SearchBar from "./searchbar";
 import NotificationsPanel from "./notification";
+import { toast } from "react-toastify";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -20,6 +21,14 @@ const Navbar: React.FC = () => {
     setActiveModal("");
   };
 
+  const Logout=()=>{
+    localStorage.clear();
+    router.push('/Login');
+    window.location.reload();
+    toast("You have been Logged-out!!")
+
+
+  }
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (activeModal && !(event.target as HTMLElement).closest(".modal")) {
@@ -61,15 +70,15 @@ const Navbar: React.FC = () => {
           >
             <FaUserTie className="mr-2" /> Profile
           </Link>
-          <Link
-            href="/api/auth/signout"
-            className=" w-full py-2 text-left px-4 hover:bg-gray-100 flex items-center"
+          <div
+            
+            className=" w-full py-2 text-left px-4 hover:bg-gray-100 flex items-center cursor-pointer"
             onClick={() => {
-              signOut();
+              Logout();
             }}
           >
             <BiLogOut className="mr-2" /> Logout
-          </Link>
+          </div>
         </div>
       )}
     </header>

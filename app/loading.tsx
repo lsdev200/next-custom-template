@@ -3,18 +3,91 @@ import Image from "next/image";
 const Loading = () => {
   return (
     <div className="fixed w-screen h-screen top-0 left-0 flex flex-col items-center justify-center bg-white bg-opacity-80 z-50 ">
-      <div className="flex flex-col items-center space-y-4">
-        <Image
-          src="/assets/img/devonix.png"
-          alt="Company Logo"
-          width={270}
-          height={270}
-          className="bg-blend-multiply"
-        />
-        <div className="text-gray-700 text-xl font-semibold animate-pulse">
-          Re-Factoring Your Data
+      <div className="flex flex-col items-center space-y-4 p-8 bg-white rounded-lg shadow-lg">
+        <div
+          aria-label="Loading..."
+          role="status"
+          className="flex items-center space-x-2"
+        >
+          <svg
+            className="h-20 w-20 animate-spin stroke-gray-500"
+            viewBox="0 0 256 256"
+          >
+            <line
+              x1="128"
+              y1="32"
+              x2="128"
+              y2="64"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="195.9"
+              y1="60.1"
+              x2="173.3"
+              y2="82.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="224"
+              y1="128"
+              x2="192"
+              y2="128"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="195.9"
+              y1="195.9"
+              x2="173.3"
+              y2="173.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="128"
+              y1="224"
+              x2="128"
+              y2="192"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="60.1"
+              y1="195.9"
+              x2="82.7"
+              y2="173.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="32"
+              y1="128"
+              x2="64"
+              y2="128"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+            <line
+              x1="60.1"
+              y1="60.1"
+              x2="82.7"
+              y2="82.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="24"
+            ></line>
+          </svg>
+          <span className="text-4xl font-medium text-gray-500">Loading...</span>
         </div>
-        <div className="w-12 h-12 border-t-4 border-indigo-400 border-solid rounded-full animate-spin"></div>
       </div>
     </div>
   );

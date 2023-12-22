@@ -49,6 +49,7 @@ import FAQAccordion from "./components/faq";
 import ChatBox, { Message } from "./components/chatBox/chatbox";
 import Map from "./components/googleMap/googlemap";
 import CountdownTimer from "./components/countdown";
+import LoginClient from "./Login/LoginClient";
 
 function Home() {
   const filetypes = ["image/png", "image/jpeg"];
@@ -126,6 +127,7 @@ function Home() {
   const targetDate = new Date("2023-12-31T23:59:59");
   return (
     <>
+
       <div className="w-full h-full flex flex-wrap justify-center items-center ">
         <div className="flex w-full gap-24 ml-24 ">
           <DataVisualizationBar data={barchartdata.data} />
@@ -137,7 +139,6 @@ function Home() {
           <DataVisualizationPolarArea data={polarareachartdata.data} />
           <DataVisualizationRadar data={radarchartdata.data} />
         </div>
-
 
 
         {/* <UserList users={userlist} /> */}

@@ -179,7 +179,7 @@ const SidebarMenu: React.FC = () => {
         {isCollapsed ? (
           <></>
         ) : (
-          <div className="font-bold text-center text-sm bottom-0 flex items-center justify-center absolute w-60">
+          <div className="font-bold text-center text-sm bottom-6 flex items-center justify-center absolute w-60">
             © {currentYear} All Rights Reserved
           </div>
         )}

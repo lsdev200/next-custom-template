@@ -24,9 +24,12 @@ const withAuth = ({ WrappedComponent, unprotected = false }: withAuthProps) => {
       if (!unprotected && !isAuthenticated) {
         // Redirect unauthenticated users to the login page
         router.push("/Login");
+        setLoading(false);
+
       } else if (unprotected && isAuthenticated) {
         // Redirect authenticated users away from the login page to the home page
         router.push("/");
+        setLoading(false);
       } else {
         setLoading(false);
       }
