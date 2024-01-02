@@ -21,14 +21,14 @@ const LayoutClient = ({ children }: { children: React.ReactNode }) => {
     setIsLoggedIn(!!storedItem);
   }, []);
   return (
-    <div className="flex h-screen bg-[#f6f8fa] ">
+    <div className="flex h-screen bg-[#f3f4f6] ">
       {isLoggedIn ? <SidebarMenu /> : ""}
       <div className="flex-1 flex flex-col overflow-hidden">
         {isLoggedIn ? <Navbar /> : ""}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f6f8fa] ">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f3f4f6] ">
           {isLoggedIn ? children : <LoginClient />}
         </main>
-        <div className="flex justify-center items-center mb-5 bg-[#f6f8fa]">
+        <div className="flex justify-center items-center mb-5 bg-[#f3f4f6]">
           <div className="font-bold ">
             {isLoggedIn
               ? ` Copyright © Designed & Developed by Varsil Suvagiya `
