@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const LayoutClient = ({ children }: { children: React.ReactNode }) => {
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -22,15 +23,15 @@ const LayoutClient = ({ children }: { children: React.ReactNode }) => {
   }, []);
   return (
     <div className="flex h-screen bg-[#f3f4f6] ">
-      {isLoggedIn ? <SidebarMenu /> : ""}
+      {isLoggedIn   ? <SidebarMenu /> : ""}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {isLoggedIn ? <Navbar /> : ""}
+        {isLoggedIn   ? <Navbar /> : ""}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f3f4f6] ">
-          {isLoggedIn ? children : <LoginClient />}
+          {isLoggedIn   ? children : <LoginClient />}
         </main>
         <div className="flex justify-center items-center mb-5 bg-[#f3f4f6]">
           <div className="font-bold ">
-            {isLoggedIn
+            {isLoggedIn 
               ? ` Copyright © Designed & Developed by Varsil Suvagiya `
               : ""}
           </div>

@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useState } from "react";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { BsFillEyeFill } from "react-icons/bs";
+import { signIn } from "next-auth/react";
 
 const LoginClient: React.FC = () => {
 
@@ -261,7 +262,7 @@ const LoginClient: React.FC = () => {
           Sign In
         </h1>
        
-        <div className="mt-4 flex flex-col lg:flex-row items-center justify-between">
+        {/* <div className="mt-4 flex flex-col lg:flex-row items-center justify-between">
           <div className="w-full lg:w-1/2 mb-2 lg:mb-0">
             <button
               type="button"
@@ -296,6 +297,8 @@ const LoginClient: React.FC = () => {
           <div className="w-full lg:w-1/2 ml-0 lg:ml-2">
             <button
               type="button"
+              //! below code open when u want to login with github also
+              // onClick={() => signIn("github")}
               className="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
             >
               <svg
@@ -309,10 +312,10 @@ const LoginClient: React.FC = () => {
               Sign In with Github{" "}
             </button>
           </div>
-        </div>
-        <div className="mt-4 text-sm text-gray-600 text-center">
+        </div> */}
+        {/* <div className="mt-4 text-sm text-gray-600 text-center">
           <p>or with email</p>
-        </div>
+        </div> */}
         <form action="#" method="POST" className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           {/* Your form elements go here */}
          
