@@ -2,21 +2,6 @@
 
 import { redirect, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { options } from "./api/auth/[...nextauth]/options";
-import { getServerSession } from "next-auth/next";
-import withAuth from "./hooks/withAuth";
-import DropdownMenu from "./components/formComponents/dropdown";
-import UserProfileCard from "./components/userprofilecard";
-import SearchBar from "./components/navbarComponents/searchbar";
-import NotificationsPanel from "./components/navbarComponents/notification";
-import ModalDialog from "./components/Modal/modal";
-import Tabs from "./components/tabs";
-import ProductList from "./components/SidebarComponents/productlist";
-import ProductCard from "./components/SidebarComponents/productcard";
-import ProductFilters from "./components/SidebarComponents/productfilter";
-import OrderHistory from "./components/SidebarComponents/orderhistory";
-import OrderDetails from "./components/SidebarComponents/orderdetail";
-import orderdetaildata from "@/dummydata/orderdetail.json";
 
 import UserSettings from "./components/usersettings";
 import DataVisualizationBar from "./components/DataVisualization/datavisualizationbar";
@@ -33,23 +18,9 @@ import DataVisualizationPie from "./components/DataVisualization/datavisualizati
 import DataVisualizationDoughnut from "./components/DataVisualization/datavisualizationdoughnut";
 import DataVisualizationPolarArea from "./components/DataVisualization/datavisualizationpolararea";
 import DataVisualizationRadar from "./components/DataVisualization/datavisualizationradar";
-import SidebarMenu from "./components/SidebarComponents/sidebarnew";
-import UserList from "./components/userlist";
-import FileUpload from "./components/formComponents/fileupload";
-import DatePicker from "./components/formComponents/calendar";
-import Alert from "./components/Alerts/alerts";
-import Pagination from "./components/pagination";
-import Widget1 from "./components/widget/widget1";
-import Widget2 from "./components/widget/widget2";
-import ColorPicker from "./components/colorpicker";
-import ImageCarousel from "./components/Carousel/imageCarousel";
-import VideoPlayer from "./components/VIdeoPlayer/videoplayer";
-import ReviewComponent from "./components/review";
-import FAQAccordion from "./components/faq";
+
 import ChatBox, { Message } from "./components/chatBox/chatbox";
-import Map from "./components/googleMap/googlemap";
-import CountdownTimer from "./components/countdown";
-import LoginClient from "./Login/LoginClient";
+
 
 function Home() {
   const filetypes = ["image/png", "image/jpeg"];
