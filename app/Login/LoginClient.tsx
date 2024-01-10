@@ -261,11 +261,12 @@ const LoginClient: React.FC = () => {
         <h1 className="text-3xl font-semibold mb-6 text-black text-center">
           Sign In
         </h1>
-       
+    
         {/* <div className="mt-4 flex flex-col lg:flex-row items-center justify-between">
           <div className="w-full lg:w-1/2 mb-2 lg:mb-0">
             <button
               type="button"
+               onClick={() => signIn("google")}
               className="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
             >
               <svg
@@ -298,7 +299,7 @@ const LoginClient: React.FC = () => {
             <button
               type="button"
               //! below code open when u want to login with github also
-              // onClick={() => signIn("github")}
+              onClick={() => signIn("github")}
               className="w-full flex justify-center items-center gap-2 bg-white text-sm text-gray-600 p-2 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300"
             >
               <svg
