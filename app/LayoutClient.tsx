@@ -25,6 +25,7 @@ const LayoutClient = ({ children }: { children: React.ReactNode }) => {
     <div className="flex h-screen bg-[#f3f4f6] ">
       {isLoggedIn   ? <SidebarMenu /> : ""}
       <div className="flex-1 flex flex-col overflow-hidden">
+        
         {isLoggedIn   ? <Navbar /> : ""}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#f3f4f6] ">
           {isLoggedIn   ? children : <LoginClient />}
