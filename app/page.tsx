@@ -8,6 +8,7 @@ import DataVisualizationBar from "./components/DataVisualization/datavisualizati
 import DataVisualizationLine from "./components/DataVisualization/datavisualizationline";
 import DropdownSelect from "./components/formComponents/dropdownselect";
 import barchartdata from "@/dummydata/barchartdata.json";
+import DataVisualizationDoughnut from "./components/DataVisualization/datavisualizationdoughnut";
 import piechartdata from "@/dummydata/piechartdata.json";
 import userlist from "@/dummydata/userlist.json";
 import doughnutchartdata from "@/dummydata/doughnutchartdata.json";
@@ -15,7 +16,6 @@ import linechartdata from "@/dummydata/linechartdata.json";
 import polarareachartdata from "@/dummydata/polararea.json";
 import radarchartdata from "@/dummydata/radarchartdata.json";
 import DataVisualizationPie from "./components/DataVisualization/datavisualizationpie";
-import DataVisualizationDoughnut from "./components/DataVisualization/datavisualizationdoughnut";
 import DataVisualizationPolarArea from "./components/DataVisualization/datavisualizationpolararea";
 import DataVisualizationRadar from "./components/DataVisualization/datavisualizationradar";
 
