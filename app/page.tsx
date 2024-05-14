@@ -23,11 +23,11 @@ import ChatBox, { Message } from "./components/chatBox/chatbox";
 
 
 function Home() {
+  // ** color picker
+  const [selectedColor, setSelectedColor] = useState("#FF5733");
   const filetypes = ["image/png", "image/jpeg"];
   const filsize = 100000;
 
-  // ** color picker
-  const [selectedColor, setSelectedColor] = useState("#FF5733");
 
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
